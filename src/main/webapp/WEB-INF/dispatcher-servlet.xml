@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+                http://www.springframework.org/schema/context
+                http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<!-- Use annotations (@Autowired) for property injection -->
+	<context:annotation-config />
+
+	<!-- Spring will find all of our controllers automatically because they 
+		are annotated with @Controller. We do not need to configure them in XML. -->
+	<context:component-scan base-package="com.saltlux.translate.controller" />
+
+	<!-- We have two Spring MVC handler mappings. The first looks at @RequestMapping 
+		annotations and XML mappings. -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" p:order="1" />
+
+	<!-- If an incoming request is not mapped by the first handler mapping, 
+		the task falls to this mapping which uses the controller class name for mapping -->
+	<bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping" p:order="2" />
+
+	<!-- Methods within the controllers are mapped to URLs by @RequestMapping 
+		annotations. For example, TownController has an annotated method "list"; -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+
+	<!-- Views are located in /WEB-INF/view/ and end with a .jsp extension. 
+		If a handler method does not explicitly specify a view, the view is determined -->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/pages/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+</beans>
