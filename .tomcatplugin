@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tomcatProjectProperties>
-    <rootDir>/target/spring-archetype</rootDir>
+    <rootDir>/target/integration-generic-dao</rootDir>
     <exportSource>false</exportSource>
     <reloadable>true</reloadable>
     <redirectLogger>false</redirectLogger>
@@ -8,6 +8,5 @@
     <warLocation></warLocation>
     <extraInfo></extraInfo>
     <webPath>/spring-archetype</webPath>
-    <webClassPathEntries>
-    </webClassPathEntries>
+    <webClassPathEntries></webClassPathEntries>
 </tomcatProjectProperties>
