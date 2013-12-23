@@ -14,11 +14,11 @@ This is an example used spring integrate generic DAO and hibernate. It used data
 3. How to use
 	- Install database on local, the project included DB file.
 	- Clone source code from github
-		+ git clone https://github.com/dangokuson/spring-archetype.git
+		+ git clone https://github.com/dangokuson/integration-generic-dao.git
 	- Run by command line
 		+ mvn clean install -U -X
 	- You can import on eclipse
 		+ mvn eclipse:clean eclipse:eclipse -U -X
 
-Copyright © 2013 DANGOKUSON Team.
+Copyright © 2013 DEV Team.
 
